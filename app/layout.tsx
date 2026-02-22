@@ -21,12 +21,15 @@ export const metadata: Metadata = {
   description:
     "Senior DevOps leader building scalable infrastructure, automation pipelines, and high-availability systems. Focused on reliability, security, and engineering culture.",
   metadataBase: new URL("https://mehmet.tech"),
+  alternates: {
+    canonical: "https://mehmet.tech",
+  },
   openGraph: {
     title: "Mehmet Şirin Usanmaz — DevOps Team Lead",
     description:
       "Senior DevOps leader building scalable infrastructure, automation pipelines, and high-availability systems.",
     url: "https://mehmet.tech",
-    siteName: "mehmet.tech",
+    siteName: "mehmet.tech | mehmetsir.in",
     locale: "en_US",
     type: "website",
   },

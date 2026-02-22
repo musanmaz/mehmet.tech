@@ -11,7 +11,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="flex items-center justify-between pt-6">
         <span className="font-mono text-sm text-neutral-500 dark:text-neutral-400">
-          {siteConfig.domain}
+          {siteConfig.domains.join(" / ")}
         </span>
         <ThemeToggle />
       </nav>
@@ -59,13 +59,16 @@ export default function Home() {
       {/* Contact */}
       <Section id="contact" title="Contact">
         <div className="flex flex-col gap-4 font-mono text-sm">
-          <a
-            href={`mailto:${siteConfig.contact.email}`}
-            className="flex items-center gap-3 text-neutral-700 transition-colors hover:text-emerald-600 dark:text-neutral-300 dark:hover:text-emerald-400"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            {siteConfig.contact.email}
-          </a>
+          {siteConfig.contact.emails.map((email) => (
+            <a
+              key={email}
+              href={`mailto:${email}`}
+              className="flex items-center gap-3 text-neutral-700 transition-colors hover:text-emerald-600 dark:text-neutral-300 dark:hover:text-emerald-400"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              {email}
+            </a>
+          ))}
           <a
             href={siteConfig.contact.github}
             target="_blank"

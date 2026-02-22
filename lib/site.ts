@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Senior DevOps leader building scalable infrastructure, automation pipelines, and high-availability systems.",
   url: "https://mehmet.tech",
-  domain: "mehmet.tech",
+  domains: ["mehmet.tech", "mehmetsir.in"],
 
   hero: {
     tagline: "Designing resilient systems. Leading DevOps transformation.",
@@ -48,7 +48,7 @@ export const siteConfig = {
   },
 
   contact: {
-    email: "hello@mehmet.tech",
+    emails: ["hello@mehmet.tech", "usanmaz@mehmetsir.in"],
     github: "https://github.com/musanmaz",
     linkedin: "https://www.linkedin.com/in/mehmetsirinusanmaz/",
   },
