@@ -18,27 +18,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
-  title: "Mehmet Şirin Usanmaz — DevOps Team Lead",
+  title: "Mehmet Sirin Usanmaz — DevOps Team Lead",
   description:
-    "Senior DevOps leader building scalable infrastructure, automation pipelines, and high-availability systems. Focused on reliability, security, and engineering culture.",
+    "DevOps Team Lead building scalable infrastructure and leading engineering teams. Focused on reliability, automation, and observability.",
   metadataBase: new URL("https://mehmet.tech"),
   alternates: {
     canonical: "https://mehmet.tech",
   },
   openGraph: {
-    title: "Mehmet Şirin Usanmaz — DevOps Team Lead",
+    title: "Mehmet Sirin Usanmaz — DevOps Team Lead",
     description:
-      "Senior DevOps leader building scalable infrastructure, automation pipelines, and high-availability systems.",
+      "DevOps Team Lead building scalable infrastructure and leading engineering teams.",
     url: "https://mehmet.tech",
-    siteName: "mehmet.tech | mehmetsir.in",
+    siteName: "mehmet.tech",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mehmet Şirin Usanmaz — DevOps Team Lead",
+    title: "Mehmet Sirin Usanmaz — DevOps Team Lead",
     description:
-      "Senior DevOps leader building scalable infrastructure, automation pipelines, and high-availability systems.",
+      "DevOps Team Lead building scalable infrastructure and leading engineering teams.",
   },
   robots: {
     index: true,

@@ -1,6 +1,9 @@
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
-import { Card } from "@/components/Card";
+import { ProjectCard } from "@/components/ProjectCard";
+import { TechStack } from "@/components/TechStack";
+import { Writing } from "@/components/Writing";
+import { OpenSource } from "@/components/OpenSource";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
@@ -13,42 +16,75 @@ export default function Home() {
 
       <Hero />
 
-      {/* What I Do */}
-      <Section id="work" title="What I Do">
+      {/* Featured Projects */}
+      <Section id="projects" title="Featured Projects">
         <div className="grid gap-4 sm:grid-cols-2">
-          {siteConfig.whatIDo.map((item) => (
-            <Card
-              key={item.title}
-              title={item.title}
-              description={item.description}
+          {siteConfig.featuredProjects.map((project) => (
+            <ProjectCard
+              key={project.name}
+              name={project.name}
+              url={"url" in project ? project.url : undefined}
+              repo={"repo" in project ? project.repo : undefined}
+              description={project.description}
+              problem={project.problem}
+              techStack={project.techStack}
+              useCase={project.useCase}
             />
           ))}
         </div>
       </Section>
 
-      {/* Current Focus */}
-      <Section title="Current Focus">
-        <ul className="space-y-3">
-          {siteConfig.currentFocus.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-3 text-neutral-700 dark:text-neutral-300"
-            >
-              <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-              <span className="text-base">{item}</span>
-            </li>
-          ))}
-        </ul>
+      {/* Other Projects */}
+      <Section title="Other Projects">
+        <div className="space-y-6">
+          {Object.entries(siteConfig.otherProjects).map(
+            ([category, projects]) => (
+              <div key={category}>
+                <h3 className="mb-3 font-mono text-xs font-medium uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
+                  {category}
+                </h3>
+                <div className="space-y-1">
+                  {projects.map((project) => (
+                    <a
+                      key={project.name}
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between rounded-lg px-4 py-2.5 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800/50"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-sm text-neutral-800 dark:text-neutral-200">
+                          {project.name}
+                        </span>
+                        <span className="hidden text-sm text-neutral-500 sm:inline dark:text-neutral-400">
+                          — {project.description}
+                        </span>
+                      </div>
+                      <span className="rounded-md bg-neutral-200/60 px-2 py-0.5 font-mono text-xs text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
+                        {project.language}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ),
+          )}
+        </div>
       </Section>
 
-      {/* Philosophy */}
-      <Section title="Philosophy">
-        <blockquote className="mb-6 border-l-2 border-emerald-500 pl-4 font-mono text-lg text-neutral-800 dark:text-neutral-200">
-          &ldquo;{siteConfig.philosophy.quote}&rdquo;
-        </blockquote>
-        <p className="max-w-2xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-          {siteConfig.philosophy.body}
-        </p>
+      {/* Technology Focus */}
+      <Section id="tech" title="Technology Focus">
+        <TechStack />
+      </Section>
+
+      {/* Writing */}
+      <Section id="writing" title="Writing">
+        <Writing />
+      </Section>
+
+      {/* Open Source & Contributions */}
+      <Section id="opensource" title="Open Source & Contributions">
+        <OpenSource />
       </Section>
 
       {/* Contact */}
