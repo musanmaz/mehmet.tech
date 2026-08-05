@@ -19,3 +19,75 @@ body {
 ::selection {
   @apply bg-emerald-200 text-emerald-900 dark:bg-emerald-800 dark:text-emerald-100;
 }
+
+/* --- /terminal ---------------------------------------------------------- */
+
+.terminal-root ::selection {
+  background: var(--term-selection);
+  color: var(--term-fg);
+}
+
+@keyframes terminal-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal-caret {
+  animation: terminal-blink 1.05s steps(1) infinite;
+}
+
+.terminal-caret,
+.terminal-caret-idle {
+  display: inline-block;
+  min-width: 0.6em;
+  white-space: pre;
+}
+
+.terminal-crt {
+  text-shadow: 0 0 4px color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.terminal-crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--term-bg) 0%, transparent) 0px,
+    color-mix(in srgb, var(--term-bg) 0%, transparent) 2px,
+    color-mix(in srgb, #000 26%, transparent) 3px,
+    color-mix(in srgb, #000 26%, transparent) 4px
+  );
+}
+
+.terminal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--term-selection) transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: var(--term-selection);
+  border-radius: 4px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-caret {
+    animation: none;
+  }
+}

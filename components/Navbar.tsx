@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useDomain } from "@/hooks/useDomain";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -35,6 +36,12 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/terminal"
+            className="font-mono text-xs tracking-wider text-emerald-600 transition-colors hover:text-emerald-500 dark:text-emerald-400"
+          >
+            $ terminal
+          </Link>
           <ThemeToggle />
         </div>
 
@@ -70,6 +77,13 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/terminal"
+            onClick={() => setMenuOpen(false)}
+            className="block py-2 font-mono text-sm text-emerald-600 transition-colors hover:text-emerald-500 dark:text-emerald-400"
+          >
+            $ terminal
+          </Link>
         </div>
       )}
     </nav>
