@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
+import { PublicInfrastructure } from "@/components/PublicInfrastructure";
 import { TechStack } from "@/components/TechStack";
 import { Writing } from "@/components/Writing";
 import { OpenSource } from "@/components/OpenSource";
@@ -32,6 +33,11 @@ export default function Home() {
             />
           ))}
         </div>
+      </Section>
+
+      {/* Public Infrastructure */}
+      <Section id="infra" title="Public Infrastructure">
+        <PublicInfrastructure />
       </Section>
 
       {/* Other Projects */}

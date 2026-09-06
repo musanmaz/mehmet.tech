@@ -7,6 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { href: "#projects", label: "Projects" },
+  { href: "#infra", label: "Infra" },
   { href: "#tech", label: "Tech" },
   { href: "#writing", label: "Writing" },
   { href: "#contact", label: "Contact" },
@@ -26,12 +27,12 @@ export function Navbar() {
           {mounted ? domain : "\u00A0"}
         </a>
 
-        <div className="hidden items-center gap-6 sm:flex">
+        <div className="hidden items-center gap-5 sm:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-wider text-neutral-500 transition-colors hover:text-emerald-600 dark:text-neutral-400 dark:hover:text-emerald-400"
+              className="whitespace-nowrap font-mono text-xs uppercase tracking-wider text-neutral-500 transition-colors hover:text-emerald-600 dark:text-neutral-400 dark:hover:text-emerald-400"
             >
               {link.label}
             </a>

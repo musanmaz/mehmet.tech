@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Mehmet Sirin Usanmaz",
   title: "Mehmet Sirin Usanmaz — DevOps Team Lead",
   description:
-    "DevOps Team Lead building scalable infrastructure and leading engineering teams. Focused on reliability, automation, and observability.",
+    "DevOps Team Lead building scalable infrastructure and leading engineering teams. Focused on reliability, automation, observability, and public network infrastructure.",
   url: "https://mehmet.tech",
 
   domains: {
@@ -215,6 +215,27 @@ export const siteConfig = {
         "Team leads and engineering managers tracking developer productivity.",
     },
   ],
+
+  publicInfrastructure: {
+    speedtest: {
+      name: "Ookla Speedtest Server",
+      summary:
+        "Public Speedtest infrastructure operated in Istanbul, providing high-capacity connectivity for internet performance measurements.",
+      status: "Live",
+      badge: "Ookla Approved",
+      operator: "Mehmet Şirin",
+      location: "Istanbul, Türkiye",
+      hostname: "speedtest.mehmet.tech",
+      compute: "6 vCPU · 8 GB RAM",
+      storage: "80 GB NVMe",
+      network: "10 Gbps",
+      platform: "Linux",
+      description:
+        "I operate a public Ookla Speedtest node in Istanbul as part of my personal infrastructure. The server runs on a 10 Gbps network and provides reliable bandwidth and latency measurements for Speedtest users.",
+      speedtestUrl: "https://www.speedtest.net",
+      speedtestLabel: "Open Speedtest",
+    },
+  },
 
   otherProjects: {
     "DevOps / Platform Tooling": [
