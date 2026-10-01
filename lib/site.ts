@@ -9,6 +9,8 @@ export const siteConfig = {
     "mehmet.tech": { email: "hello@mehmet.tech" },
     "mehmetsir.in": { email: "usanmaz@mehmetsir.in" },
     "musanmaz.com.tr": { email: "info@musanmaz.com.tr" },
+    "judge-me.tech": { email: "hello@mehmet.tech" },
+    "usanmaz.dev": { email: "hello@mehmet.tech" },
   },
 
   primaryDomain: "mehmet.tech",

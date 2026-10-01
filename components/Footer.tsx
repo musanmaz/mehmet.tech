@@ -22,7 +22,7 @@ export function Footer() {
           </Link>
         </div>
         {mounted && (
-          <div className="flex gap-3 font-mono text-xs text-neutral-400 dark:text-neutral-600">
+          <div className="flex flex-wrap gap-3 font-mono text-xs text-neutral-400 dark:text-neutral-600">
             {Object.keys(siteConfig.domains).map((d) => (
               <a
                 key={d}
